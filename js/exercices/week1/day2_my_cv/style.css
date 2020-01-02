@@ -1,0 +1,42 @@
+* {
+	  font-family: Arial, Helvetica, sans-serif;
+
+}
+#wrapper {	
+	position: relative;
+	margin: 10%;
+	display: grid;
+  grid-template-columns: minmax(45rem, max-content) repeat(auto-fill, 200px) 20%;
+  grid-gap: 1rem;
+}
+
+.header img {
+  /*float: left;*/
+  border-radius: 10px;
+  display: inline;
+  width: 100px;
+  height: 110px;
+  background: #555;
+  margin-top: 20px;
+}
+
+.header h1 {
+  position: relative;
+  display: inline;
+  top: -50px;
+  left: 10px;
+}
+.header h5 {
+  position: relative;
+  display: inline;
+  left: -100px;
+  top: -20px;
+}
+
+.icon {
+	display:inline;
+}
+
+.timeline {
+	color: grey;
+}
