@@ -6,7 +6,6 @@
         <title>Currency Convertrer</title>
     </head>
     <body>
-        <div id="root"></div>
         <br>
         <!-- <div>
             <table>
@@ -696,7 +695,7 @@
                 </tbody>
             </table>
         </div> -->
-        Amount: <input type="number" name="Amount" value="">
+        Amount: <input type="number" name="Amount" value="10" id="amount">
         <hr>
         <br>
         <table>
@@ -708,7 +707,7 @@
             </thead>
             <td>
                 <div>
-                    <select name='currencies'>
+                    <select name='currencies' id="currencies1">
                         <option value='AED' title='United Arab Emirates Dirham'>AED</option>
                         <option value='AFN' title='Afghan Afghani'>AFN</option>
                         <option value='ALL' title='Albanian Lek'>ALL</option>
@@ -883,7 +882,7 @@
             </td>
             <td>
                 <div>
-                    <select name='currencies'>
+                    <select name='currencies' id="currencies2">
                         <option value='AED' title='United Arab Emirates Dirham'>AED</option>
                         <option value='AFN' title='Afghan Afghani'>AFN</option>
                         <option value='ALL' title='Albanian Lek'>ALL</option>
@@ -1059,19 +1058,11 @@
         </table>
         <hr>
         <br>
-        <th><form action="/script.js">
+<!--         <th><form action="">
             <input type="submit" value="Convert">
-        </form></th>
-        <br>
-        <p>Click the "Convert" button and the form-data will be sent to a page on the server called "/action_page.php".</p></th>
-    <script>
-        async function getData() {
-            let url = "http://api.currencylayer.com/live?access_key=50f3e1a7f30e7984e27ebec75f564ab9";
-        
-            let data = await (await fetch(url)).json();
-            console.log(data);
-        }
-    getData();
-    </script>
+        </form></th> -->
+        <div id="root"></div>
+        <p id="result">Click the "Convert" and see the results.</p></th>
+    <script type="text/javascript" src="script.js"></script>
     </body>
     </html>
