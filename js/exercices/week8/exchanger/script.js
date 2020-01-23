@@ -17,15 +17,14 @@ async function Convert() {
 	let from = document.getElementById("currencies1").value;
 	let to = document.getElementById("currencies2").value;
 
+	let index = document.getElementById("currencies2").selectedIndex;
+	let local = document.getElementById("currencies2")[index].getAttribute('title');
+
     let url = `http://api.currencylayer.com/${endpoint}?access_key=${access_key}&from=${from}&to=${to}&amount=${amount}`;  
 
 	let data = await (await fetch(url)).json();
 
-	console.log(data);
-
 	let quotes = Object.values(data)[5];
-
-	// console.log(quotes);
 
 	const getFromValue = () => {
 		for (let [key, value] of Object.entries(quotes)) {
@@ -48,5 +47,5 @@ async function Convert() {
  	console.log(Ratio);
  	let Result = value * Ratio;
 
-	document.getElementById("result").innerHTML = `${value} ${from} are worth ${parseInt(Result)} in ${to}`;
+	document.getElementById("result").innerHTML = `${value} ${from} worth ${parseInt(Result)} ${local}`;
 }
