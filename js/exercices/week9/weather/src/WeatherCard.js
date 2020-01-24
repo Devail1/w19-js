@@ -6,8 +6,8 @@ const WeatherCard = (props) => {
              <h1>Sydney</h1>
              <h3>AU</h3>
              <img src="" alt="Wather Icon"/>
-             <h1>20</h1>
-             <h3>°C</h3>
+             <h1>20 °C</h1>
+             <h3>Clouds</h3>
          </div>
      );
 }
