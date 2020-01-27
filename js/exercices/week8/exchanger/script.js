@@ -28,24 +28,27 @@ async function Convert() {
 
 	const getFromValue = () => {
 		for (let [key, value] of Object.entries(quotes)) {
-	 		if (key.includes(from)) {
+			if (key.includes('USD' + from)) {
 	 			return value;
 	 		}
  		}
  	}
  	const getToValue = () => {
 	 	for (let [key, value] of Object.entries(quotes)) {
-	 		if (key.includes(to)) {
-	 			return value;
+	 		if (key.includes('USD' + to)) {
+				 return value; 
 	 	}
  	}
  }
+	 let Ratio = (    ( getToValue() ) / ( getFromValue() )   );
+	 let Result = value * Ratio;
 
- 	console.log(getFromValue());
- 	console.log(getToValue());
- 	let Ratio = (  ( getToValue() ) / ( getFromValue() ) );
- 	console.log(Ratio);
- 	let Result = value * Ratio;
+ 	// console.log(Object.entries(quotes));
+ 	// console.log(getFromValue());
+ 	// console.log(getToValue());
+ 	// // console.log(Ratio);
+	console.log('from - ' + from,'to - ' + to,'local - ' + local,'value - ' + value,'Result - ' + Result, 'Ratio - ' + Ratio );
 
-	document.getElementById("result").innerHTML = `${value} ${from} worth ${parseInt(Result)} ${local}`;
+
+	document.getElementById("result").innerHTML = `${value} ${from} worth ${Result.toFixed(2)} ${local}`;
 }
